@@ -1,11 +1,13 @@
 import "./App.css";
+import NavBar from "./components/ui/NavBar/NavBar";
 import MainRoutes from "./route/MainRoutes";
 
 function App() {
   return (
-    <>
-      <MainRoutes />
-    </>
+    <div>
+      <NavBar/>
+      <MainRoutes/>
+    </div>
   );
 }
 

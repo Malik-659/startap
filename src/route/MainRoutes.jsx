@@ -1,12 +1,13 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import HomePage from "../pages/HomePage/HomePage";
 
 const MainRoutes = () => {
   const ROUTES = [
     {
       id: 1,
-      path: "",
-      element: "",
+      path: "/",
+      element:<HomePage/>,
     },
   ];
   return (
