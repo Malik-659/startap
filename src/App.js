@@ -1,5 +1,6 @@
 import "./App.css";
-import MainRoutes from "./route/MainRoutes";
+import VideoChat from "./components/VideoChat/VideoChat";
+import MainRoutes from "./components/VideoChat/VideoChat";
 
 function App() {
   return (
