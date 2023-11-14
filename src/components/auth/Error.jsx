@@ -17,7 +17,7 @@ const Error = () => {
           alt=""
           width="300"
           height="auto"
-          className="animate-spin my-5"
+          className="astronaut-img my-5"
         />
         <p className="mt-4 text-gray-500">Что-то пошло не так.</p>
       </div>

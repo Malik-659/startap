@@ -123,6 +123,20 @@
       "direction": "",
       "type": "company",
       "id": 2
+    },
+    {
+      "firstName": "Olesia",
+      "lastName": "",
+      "image": "",
+      "email": "5kanolesya@gmail.com",
+      "phone": "",
+      "skills": "",
+      "stack": "",
+      "education": "",
+      "position": "",
+      "about": "",
+      "type": "user",
+      "id": 3
     }
   ]
 }
