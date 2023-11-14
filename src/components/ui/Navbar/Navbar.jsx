@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { checkUserLogin } from "../../../helpers/functions";
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -20,6 +21,8 @@ const NavBar = () => {
           className="font-normal text-white font-jomhuria text-[56px] flex items-center gap-2"
         >
           <p>User</p>
+        <div className="font-normal text-white font-jomhuria text-[56px] flex items-center gap-2">
+          <p>{checkUserLogin() ? checkUserLogin() : "User"}</p>
           <svg
             width="45"
             height="45"

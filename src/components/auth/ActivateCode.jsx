@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { activateCode } from "../../store/users/usersActions";
 
-const ActiveCode = () => {
+const ActivateCode = ({ setModal }) => {
   const [user, setUser] = useState({ email: "", code: "" });
 
   const { loading, status } = useSelector((state) => state.users);
@@ -16,55 +16,79 @@ const ActiveCode = () => {
       {loading ? (
         <h1>Загрузка...</h1>
       ) : (
-        <div>
-          <div>
-            <h2>Проверка аккаунта</h2>
-            <p>Войдите в аккаунт</p>
-          </div>
-          <form novalidate="" action="">
+        <div
+          style={{
+            display: "flex",
+            position: "fixed",
+            top: "0",
+            bottom: "0",
+            right: "0",
+            left: "0",
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+          }}
+        >
+          <div
+            className="m-auto bg-white p-16 rounded-lg flex flex-col text-center items-center gap-5 w-[30rem]"
+            style={{ position: "relative" }}
+          >
+            <button
+              style={{
+                position: "absolute",
+                right: "15px",
+                top: "10px",
+              }}
+              onClick={() => {
+                setModal(false);
+              }}
+            >
+              X
+            </button>
             <div>
-              <div>
-                <label for="email">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder=""
-                  onChange={(e) => {
-                    setUser({ ...user, email: e.target.value });
-                  }}
-                />
-              </div>
-              <div>
-                <label for="code">Code</label>
-                <input
-                  type="text"
-                  name="password"
-                  id="password"
-                  placeholder=""
-                  onChange={(e) => {
-                    setUser({ ...user, code: e.target.value });
-                  }}
-                />
-              </div>
+              <h2 className="text-xl font-bold">
+                Enter the code sent to your email to activate your account
+              </h2>
             </div>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="email"
+              onChange={(e) => {
+                setUser({ ...user, email: e.target.value });
+              }}
+              className="border-gray-400 border-4 outline-none rounded-2xl w-[90%] py-3 px-1  font-bold bg-[#D9D9D9] bg-opacity-100"
+            />
+            <input
+              type="text"
+              name="code"
+              id="code"
+              placeholder="activate code"
+              onChange={(e) => {
+                setUser({ ...user, code: e.target.value });
+              }}
+              className="border-gray-400 border-4 outline-none rounded-2xl w-[90%] py-3 px-1 font-bold bg-[#D9D9D9] bg-opacity-100"
+            />
             <div>
               <div>
                 <button
                   type="button"
                   onClick={() => {
                     dispatch(activateCode({ user, navigate }));
+                    setModal(false);
                   }}
+                  className="bg-violet-500 rounded-xl p-3 text-white"
                 >
-                  Активировать
+                  Activate
                 </button>
               </div>
             </div>
-          </form>
+          </div>
         </div>
       )}
     </>
   );
 };
 
-export default ActiveCode;
+export default ActivateCode;

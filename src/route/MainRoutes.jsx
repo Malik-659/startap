@@ -1,5 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import { PostsList } from "../components/posts/PostsList";
+import { PostCreate } from "../components/posts/PostCreate";
+import { PostEdit } from "../components/posts/PostEdit";
 import ActiveCode from "../components/auth/ActivateCode";
 import HomePage from "../pages/HomePage/HomePage";
 import RegisterPage from "../pages/RegisterPage/RegisterPage";
@@ -15,6 +18,21 @@ const MainRoutes = () => {
   const ROUTES = [
     {
       id: 1,
+      path: "posts",
+      element: <PostsList />,
+    },
+    {
+      id: 2,
+      path: "add-post",
+      element: <PostCreate />,
+    },
+    {
+      id: 3,
+      path: "edit-post/:id",
+      element: <PostEdit />,
+    },
+    {
+      id:4,
       path: "/",
       element: <HomePage />,
     },
@@ -28,6 +46,7 @@ const MainRoutes = () => {
       path: "/sign-in",
       element: <LoginPage />,
     },
+
     {
       id: 779,
       path: "/activate-code",
@@ -58,6 +77,7 @@ const MainRoutes = () => {
       path: "/projects-edit/:id",
       element: <EditProject />,
     },
+
   ];
   return (
     <Routes>
