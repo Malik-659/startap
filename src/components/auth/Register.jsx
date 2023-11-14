@@ -17,6 +17,9 @@ const Register = () => {
   });
 
   const [modal, setModal] = useState(false);
+  const [type, setType] = useState("");
+
+  console.log(type);
 
   const { loading, status } = useSelector((state) => state.users);
 
@@ -24,7 +27,11 @@ const Register = () => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    dispatch(registerUser({ user, navigate }));
+    if (!type) {
+      return alert("Choose account type");
+    }
+
+    dispatch(registerUser({ user, type }));
   };
 
   useEffect(() => {
@@ -107,14 +114,31 @@ const Register = () => {
                       Log In
                     </Link>
                   </p>
-                  <button
-                    onClick={() => {
-                      setModal(true);
-                    }}
-                    className="bg-violet-500 text-white p-2 rounded-md hover:bg-violet-700"
-                  >
-                    Activate code
-                  </button>
+
+                  <div className="flex justify-around w-[90%]">
+                    <div className="flex gap-x-3 items-center">
+                      <p>Select account type</p>
+                      <select
+                        name=""
+                        id=""
+                        onChange={(e) => {
+                          setType(e.target.value);
+                        }}
+                      >
+                        <option hidden>type</option>
+                        <option value="user">user</option>
+                        <option value="company">company</option>
+                      </select>
+                    </div>
+                    <button
+                      onClick={() => {
+                        setModal(true);
+                      }}
+                      className="bg-violet-500 text-white p-2 rounded-md hover:bg-violet-700"
+                    >
+                      Activate code
+                    </button>
+                  </div>
                 </div>
                 <div className="text-center">
                   <h1 className="font-jomhuria  text-[10rem] text-white">
