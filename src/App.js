@@ -1,3 +1,5 @@
+
+import NavBar from "./components/ui/NavBar/Navbar";
 import { useEffect } from "react";
 import NavBar from "./components/ui/NavBar/NavBar";
 import MainRoutes from "./route/MainRoutes";
@@ -11,7 +13,7 @@ function App() {
   }, []);
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       <MainRoutes />
     </div>
   );
