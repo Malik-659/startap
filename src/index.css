@@ -1,5 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Jomhuria&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jomhuria&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.astronaut-img {
+  animation: rotate 5s infinite linear;
+}
+
+* {
+  font-family: "Archivo+Black", sans-serif !important;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
