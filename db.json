@@ -1,5 +1,4 @@
 {
-  "users": [],
   "postsTeams": [
     {
       "id": 1,
@@ -93,6 +92,34 @@
           ]
         }
       ]
+    }
+  ],
+  "users": [
+    {
+      "firstName": "Aman",
+      "lastName": "Badran",
+      "image": "",
+      "email": "amantur.mendibaev2003@gmail.com",
+      "phone": "",
+      "skills": "",
+      "stack": "",
+      "education": "",
+      "position": "",
+      "about": "",
+      "id": 1
+    },
+    {
+      "firstName": "Olesia",
+      "lastName": "Kan",
+      "image": "",
+      "email": "5kanolesya@gmail.com",
+      "phone": "",
+      "skills": "",
+      "stack": "",
+      "education": "",
+      "position": "",
+      "about": "",
+      "id": 2
     }
   ]
 }

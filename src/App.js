@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "./App.css";
+import NavBar from "./components/ui/NavBar/Navbar";
 import MainRoutes from "./route/MainRoutes";
 import { useDispatch } from "react-redux";
 import { checkUpdate } from "./store/posts/postsAction";
@@ -10,9 +10,10 @@ function App() {
     dispatch(checkUpdate());
   }, []);
   return (
-    <>
+    <div>
+      <NavBar />
       <MainRoutes />
-    </>
+    </div>
   );
 }
 
