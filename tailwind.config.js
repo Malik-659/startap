@@ -10,6 +10,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         homepage:"url('/src/image/Vector 1.svg')",
+        bg1:"url('/src/image/Polygon 1.png')"
       }
     },
   },
