@@ -1,21 +1,21 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Register from "../components/auth/Register";
 import Login from "../components/auth/Login";
 import ActiveCode from "../components/auth/ActivateCode";
 import HomePage from "../pages/HomePage/HomePage";
+import RegisterPage from "../pages/RegisterPage/RegisterPage";
 
 const MainRoutes = () => {
   const ROUTES = [
     {
       id: 1,
       path: "/",
-      element:<HomePage/>,
+      element: <HomePage />,
     },
     {
       id: 777,
       path: "/sign-up",
-      element: <Register />,
+      element: <RegisterPage />,
     },
     {
       id: 778,

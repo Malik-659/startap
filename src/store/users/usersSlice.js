@@ -59,7 +59,11 @@ const usersSlice = createSlice({
         state.loading = false;
         state.status = "error";
       })
+      .addCase(getOneUser.pending, (state) => {
+        state.loading = true;
+      })
       .addCase(getOneUser.fulfilled, (state, action) => {
+        state.loading = false;
         state.oneUser = action.payload;
         addUserToLocalStorage(action.payload, false);
       });
