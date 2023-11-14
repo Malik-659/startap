@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { checkUserLogin } from "../../../helpers/functions";
 
 const NavBar = () => {
+  const navigate = useNavigate();
   return (
     <div className="bg-black/75 w-full fixed top-0 ">
       <div className="flex  justify-between px-5">
@@ -14,6 +16,11 @@ const NavBar = () => {
             <li>Education</li>
           </ul>
         </div>
+        <div
+          onClick={() => navigate("/users/:id")}
+          className="font-normal text-white font-jomhuria text-[56px] flex items-center gap-2"
+        >
+          <p>User</p>
         <div className="font-normal text-white font-jomhuria text-[56px] flex items-center gap-2">
           <p>{checkUserLogin() ? checkUserLogin() : "User"}</p>
           <svg

@@ -123,6 +123,37 @@
       "direction": "",
       "type": "company",
       "id": 2
+    },
+    {
+      "firstName": "qwe",
+      "lastName": "zxc",
+      "image": "https://habrastorage.org/r/w780/getpro/geektimes/post_images/548/eff/e63/548effe63574bd272ef3117a46e4a0b0.jpg",
+      "email": "equueenox@gmail.com",
+      "phone": "0 700 007 991",
+      "skills": "Html, Css, JS, React, Redux, Typescript",
+      "stack": "Front-end developer",
+      "education": "Yale Uni",
+      "position": "",
+      "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit neque similique vero quaerat dolorum voluptatum natus quas consectetur ipsum sapiente.",
+      "id": 3
+    }
+
+  ],
+  "posts": [],
+  "projects": [
+    {
+      "name": "zxc",
+      "link": "zxc",
+      "techs": "zxc",
+      "descr": "zxc",
+      "id": 1
+    },
+    {
+      "name": "123",
+      "link": "123",
+      "techs": "123",
+      "descr": "123",
+      "id": 2
     }
   ]
 }

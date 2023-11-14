@@ -77,7 +77,12 @@ export const getOneUser = createAsyncThunk(
     const { data } = await axios.get(USERS_DB);
     const oneUser = data.find((user) => user.email === userEmail);
 
+    return oneUser;
     if (!oneUser.firstName) return oneUser.name;
     return oneUser.firstName;
   }
 );
+
+export const editUser = createAsyncThunk("users/editUser", async () => {
+  const { data } = await axios.patch(USERS_DB);
+});

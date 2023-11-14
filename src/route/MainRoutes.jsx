@@ -6,8 +6,13 @@ import { PostEdit } from "../components/posts/PostEdit";
 import ActiveCode from "../components/auth/ActivateCode";
 import HomePage from "../pages/HomePage/HomePage";
 import RegisterPage from "../pages/RegisterPage/RegisterPage";
+import SummaryPage from "../pages/SummaryPage/SummaryPage";
 import Login from "../components/auth/Login";
 import LoginPage from "../pages/LoginPage/LoginPage";
+import CreateProject from "../components/projects/CreateProject/CreateProject";
+import EditProject from "../components/projects/EditProject/EditProject";
+import ProjectList from "../components/projects/ProjectList/ProjectList";
+import ProjectDetails from "../components/projects/ProjectDetails/ProjectDetails";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -41,6 +46,38 @@ const MainRoutes = () => {
       path: "/sign-in",
       element: <LoginPage />,
     },
+
+    {
+      id: 779,
+      path: "/activate-code",
+      element: <ActiveCode />,
+    },
+    {
+      id: 200,
+      path: "/users/:id",
+      element: <SummaryPage />,
+    },
+    {
+      id: 202,
+      path: "/projects",
+      element: <ProjectList />,
+    },
+    {
+      id: 203,
+      path: "/projects/:id",
+      element: <ProjectDetails />,
+    },
+    {
+      id: 204,
+      path: "/add-project",
+      element: <CreateProject />,
+    },
+    {
+      id: 205,
+      path: "/projects-edit/:id",
+      element: <EditProject />,
+    },
+
   ];
   return (
     <Routes>
