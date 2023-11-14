@@ -1,10 +1,10 @@
-import "./App.css";
-import VideoChat from "./components/VideoChat/VideoChat";
-import MainRoutes from "./components/VideoChat/VideoChat";
+import Navbar from "./components/ui/Navbar/Navbar";
+import MainRoutes from "./route/MainRoutes";
 
 function App() {
   return (
     <>
+      <Navbar />
       <MainRoutes />
     </>
   );
