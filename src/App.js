@@ -1,4 +1,4 @@
-import NavBar from "./components/ui/NavBar/NavBar";
+import NavBar from "./components/ui/NavBar/Navbar";
 import MainRoutes from "./route/MainRoutes";
 
 function App() {

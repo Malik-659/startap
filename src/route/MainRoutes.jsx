@@ -4,6 +4,7 @@ import Login from "../components/auth/Login";
 import ActiveCode from "../components/auth/ActivateCode";
 import HomePage from "../pages/HomePage/HomePage";
 import RegisterPage from "../pages/RegisterPage/RegisterPage";
+import SummaryPage from "../pages/SummaryPage/SummaryPage";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -26,6 +27,11 @@ const MainRoutes = () => {
       id: 779,
       path: "/activate-code",
       element: <ActiveCode />,
+    },
+    {
+      id: 200,
+      path: "/users/:id",
+      element: <SummaryPage />,
     },
   ];
   return (

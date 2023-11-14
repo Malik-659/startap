@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
   activateCode,
+  getAllUsers,
   getOneUser,
   loginUser,
   registerUser,
@@ -12,6 +13,8 @@ const usersSlice = createSlice({
   initialState: {
     loading: false,
     status: "",
+    users: [],
+
     oneUser: null,
   },
   reducers: {
@@ -59,13 +62,19 @@ const usersSlice = createSlice({
         state.loading = false;
         state.status = "error";
       })
-      .addCase(getOneUser.pending, (state) => {
-        state.loading = true;
-      })
       .addCase(getOneUser.fulfilled, (state, action) => {
-        state.loading = false;
         state.oneUser = action.payload;
         addUserToLocalStorage(action.payload, false);
+      })
+      .addCase(getAllUsers.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(getAllUsers.fulfilled, (state, action) => {
+        state.loading = false;
+        state.users = action.payload.data;
+      })
+      .addCase(getAllUsers.rejected, (state) => {
+        state.loading = false;
       });
   },
 });
