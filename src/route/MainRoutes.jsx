@@ -23,11 +23,6 @@ const MainRoutes = () => {
       path: "/sign-in",
       element: <LoginPage />,
     },
-    {
-      id: 779,
-      path: "/activate-code",
-      element: <ActiveCode />,
-    },
   ];
   return (
     <Routes>

@@ -4,7 +4,7 @@ import { USERS_API, USERS_DB } from "../../helpers/const";
 
 export const registerUser = createAsyncThunk(
   "users/registerUser",
-  async ({ user, navigate }) => {
+  async ({ user }) => {
     const userData = new FormData();
     userData.append("email", user.email);
     userData.append("first_name", user.firstName);
@@ -28,7 +28,6 @@ export const registerUser = createAsyncThunk(
     await axios.post(`${USERS_API}/register/`, userData);
     await axios.post(USERS_DB, newUser);
     alert("Регистрация прошла успешно");
-    return { navigate };
   }
 );
 
