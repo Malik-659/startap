@@ -10,7 +10,7 @@ const NavBar = () => {
             <li>Authorization</li>
             <li>Posts</li>
             <li>Chats</li>
-            <li>education</li>
+            <li>Education</li>
           </ul>
         </div>
         <div className="font-normal text-white font-jomhuria text-[56px] flex items-center gap-2">
