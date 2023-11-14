@@ -1,5 +1,6 @@
 import React from "react";
 import "./RegisterPage.css";
+import Register from "../../components/auth/Register";
 
 const RegisterPage = () => {
   return (
@@ -7,6 +8,7 @@ const RegisterPage = () => {
       <div id="stars1"></div>
       <div id="stars2"></div>
       <div id="stars3"></div>
+      <Register />
     </section>
   );
 };
