@@ -27,9 +27,8 @@ const usersSlice = createSlice({
       .addCase(registerUser.pending, (state) => {
         state.loading = true;
       })
-      .addCase(registerUser.fulfilled, (state, action) => {
+      .addCase(registerUser.fulfilled, (state) => {
         state.loading = false;
-        action.payload.navigate("/activate-code");
       })
       .addCase(registerUser.rejected, (state) => {
         state.loading = false;
