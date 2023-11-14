@@ -60,12 +60,11 @@ export const getOneUser = createAsyncThunk(
   "users/getOneUser",
   async ({ userEmail }) => {
     const { data } = await axios.get(USERS_DB);
-    console.log(data);
     const oneUser = data.find((user) => user.email === userEmail);
     return oneUser;
   }
 );
 
-export const getAllUsers = createAsyncThunk("users/getAllUsers", async () => {
-  const { data } = await axios.get(USERS_DB);
+export const editUser = createAsyncThunk("users/editUser", async () => {
+  const { data } = await axios.patch(USERS_DB);
 });

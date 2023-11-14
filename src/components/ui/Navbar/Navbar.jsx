@@ -16,7 +16,7 @@ const NavBar = () => {
           </ul>
         </div>
         <div
-          onClick={() => navigate("/users:id")}
+          onClick={() => navigate("/users/:id")}
           className="font-normal text-white font-jomhuria text-[56px] flex items-center gap-2"
         >
           <p>User</p>
