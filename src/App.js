@@ -1,12 +1,15 @@
-import Navbar from "./components/ui/Navbar/Navbar";
+
+import "./App.css";
+import NavBar from "./components/ui/NavBar/NavBar";
 import MainRoutes from "./route/MainRoutes";
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <MainRoutes />
-    </>
+
+    <div>
+      <NavBar/>
+      <MainRoutes/>
+    </div>
   );
 }
 
