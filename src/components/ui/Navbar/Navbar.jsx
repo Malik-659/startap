@@ -2,7 +2,7 @@ import React from "react";
 
 const NavBar = () => {
   return (
-    <div className="bg-black/75 w-full fixed top-0">
+    <div className="bg-black/75 w-full fixed top-0 ">
       <div className="flex  justify-between px-5">
         <div className="w-1/2">
           <ul className="flex text-white font-normal font-jomhuria text-[56px] gap-x-[52px]">

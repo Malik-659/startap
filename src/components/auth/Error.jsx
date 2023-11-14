@@ -5,10 +5,6 @@ import { clearStatusState } from "../../store/users/usersSlice";
 const Error = () => {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(clearStatusState());
-  }, []);
-
   return (
     <>
       <div className="grid h-screen px-4 bg-white place-content-center">
@@ -38,14 +34,15 @@ const Error = () => {
 
           <p className="mt-4 text-gray-500">Что-то пошло не так.</p>
         </div>
+        <button
+          onClick={() => {
+            dispatch(clearStatusState());
+          }}
+          className="bg-blue-500 py-2 rounded-md w-[100px] mx-auto mt-2"
+        >
+          Назад
+        </button>
       </div>
-      <button
-        onClick={() => {
-          dispatch(clearStatusState());
-        }}
-      >
-        Назад
-      </button>
     </>
   );
 };
