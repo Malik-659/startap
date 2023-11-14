@@ -2,6 +2,7 @@ import axios from "axios";
 import { USERS_API } from "./const";
 
 export const addUserToLocalStorage = (user, tokens, image) => {
+  console.log(user);
   if (user) {
     localStorage.setItem("startUser", JSON.stringify(user));
   }
@@ -21,7 +22,7 @@ export const logout = () => {
 export const checkUserLogin = () => {
   const user = JSON.parse(localStorage.getItem("startUser"));
   if (user) return user;
-  return "User";
+  return false;
 };
 
 export const checkUserImage = () => {

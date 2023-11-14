@@ -4,7 +4,7 @@ import { USERS_API, USERS_DB } from "../../helpers/const";
 
 export const registerUser = createAsyncThunk(
   "users/registerUser",
-  async ({ user }) => {
+  async ({ user, type }) => {
     const userData = new FormData();
     userData.append("email", user.email);
     userData.append("first_name", user.firstName);
@@ -12,21 +12,37 @@ export const registerUser = createAsyncThunk(
     userData.append("password", user.password);
     userData.append("password_confirm", user.passwordConfirm);
 
-    const newUser = {
-      firstName: `${user.firstName}`,
-      lastName: `${user.lastName}`,
-      image: "",
-      email: `${user.email}`,
-      phone: "",
-      skills: "",
-      stack: "",
-      education: "",
-      position: "",
-      about: "",
-    };
+    let newAccount;
+
+    if (type === "user") {
+      newAccount = {
+        firstName: `${user.firstName}`,
+        lastName: `${user.lastName}`,
+        image: "",
+        email: `${user.email}`,
+        phone: "",
+        skills: "",
+        stack: "",
+        education: "",
+        position: "",
+        about: "",
+        type: "user",
+      };
+    } else {
+      newAccount = {
+        name: `${user.firstName}`,
+        email: `${user.email}`,
+        image: "",
+        phone: "",
+        members: [],
+        about: "",
+        direction: "",
+        type: "company",
+      };
+    }
 
     await axios.post(`${USERS_API}/register/`, userData);
-    await axios.post(USERS_DB, newUser);
+    await axios.post(USERS_DB, newAccount);
     alert("Регистрация прошла успешно");
   }
 );
@@ -60,6 +76,8 @@ export const getOneUser = createAsyncThunk(
   async ({ userEmail }) => {
     const { data } = await axios.get(USERS_DB);
     const oneUser = data.find((user) => user.email === userEmail);
+
+    if (!oneUser.firstName) return oneUser.name;
     return oneUser.firstName;
   }
 );
