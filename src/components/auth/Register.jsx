@@ -39,19 +39,19 @@ const Register = () => {
             <Error />
           ) : (
             <div className="flex items-center h-full w-[95%] mx-auto justify-around mt-5 flex-wrap">
-              <div className="flex flex-col bg-white bg-opacity-70 w-[37rem] rounded-lg items-center p-7 gap-3 ">
+              <div className="flex flex-col bg-white bg-opacity-70 w-[37rem] rounded-lg items-center p-7 py-14 gap-3 ">
                 <input
                   type="text"
                   id="FirstName"
                   name="first_name"
-                  placeholder="first name"
+                  placeholder="name"
                   onChange={(e) => {
                     setUser({ ...user, firstName: e.target.value });
                   }}
                   className="border-gray-400 border-8 outline-none rounded-2xl w-[90%] py-3 px-1 text-xl font-bold bg-[#D9D9D9] bg-opacity-100 "
                 />
 
-                <input
+                {/* <input
                   type="text"
                   id="LastName"
                   name="last_name"
@@ -60,7 +60,7 @@ const Register = () => {
                     setUser({ ...user, lastName: e.target.value });
                   }}
                   className="border-gray-400 border-8 outline-none rounded-2xl w-[90%] py-3 px-1 text-xl font-bold bg-[#D9D9D9] "
-                />
+                /> */}
 
                 <input
                   type="email"
