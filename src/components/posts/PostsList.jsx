@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPosts } from "../../store/posts/postsAction";
 import { PostItem } from "./PostItem";
+import styles from "./postsStyles.module.css";
+import { useNavigate } from "react-router";
 
 export const PostsList = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { posts } = useSelector((state) => state.posts);
   const [activeButton, setActiveButton] = useState(1);
 
@@ -18,9 +21,9 @@ export const PostsList = () => {
   }, []);
   return (
     <>
-      <div className="w-full flex justify-center">
+      <div className={`w-full flex justify-center mt-32 ${styles.bg}`}>
         <button
-          className={`bg-blue-500 rounded-lg m-4 p-2 border border-black hover:bg-[#303030B2] hover:text-white hover:border-white ${
+          className={`bg-blue-500/75 rounded-lg m-4 p-2 border border-black hover:bg-[#303030B2] hover:text-white hover:border-white ${
             activeButton === 0 ? "bg-[#303030B2]" : ""
           }`}
           onClick={() => {
@@ -31,7 +34,7 @@ export const PostsList = () => {
           Teams
         </button>
         <button
-          className={`bg-blue-500 rounded-lg m-4 p-2 border border-black hover:bg-[#5345FAB2] hover:text-white hover:border-white ${
+          className={`bg-blue-500/75 rounded-lg m-4 p-2 border border-black hover:bg-[#5345FAB2] hover:text-white hover:border-white ${
             activeButton === 1 ? "bg-[#5345FAB2]" : ""
           }`}
           onClick={() => {
@@ -42,7 +45,7 @@ export const PostsList = () => {
           Works
         </button>
         <button
-          className={`bg-blue-500 rounded-lg m-4 p-2 border border-black hover:bg-[#A253ECB2] hover:text-white hover:border-white ${
+          className={`bg-blue-500/75 rounded-lg m-4 p-2 border border-black hover:bg-[#A253ECB2] hover:text-white hover:border-white ${
             activeButton === 2 ? "bg-[#A253ECB2]" : ""
           }`}
           onClick={() => {
@@ -51,6 +54,14 @@ export const PostsList = () => {
           }}
         >
           Vacancies
+        </button>
+        <button
+          className={`bg-blue-500/75 rounded-lg m-4 p-2 border border-black hover:bg-[#A253ECB2] hover:text-white hover:border-white ${
+            activeButton === 2 ? "bg-[#A253ECB2]" : ""
+          }`}
+          onClick={() => navigate("/add-post")}
+        >
+          Add Post
         </button>
       </div>
       <div className="">
