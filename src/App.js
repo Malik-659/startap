@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import NavBar from "./components/ui/NavBar/Navbar";
+import Navbar from "./components/ui/NavBar/Navbar";
 import MainRoutes from "./route/MainRoutes";
 import { useDispatch } from "react-redux";
 import { checkUpdate } from "./store/posts/postsAction";
@@ -11,7 +11,7 @@ function App() {
   }, []);
   return (
     <div>
-      <NavBar />
+      <Navbar />
       <MainRoutes />
     </div>
   );

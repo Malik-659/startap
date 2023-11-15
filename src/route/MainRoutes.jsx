@@ -13,6 +13,7 @@ import CreateProject from "../components/projects/CreateProject/CreateProject";
 import EditProject from "../components/projects/EditProject/EditProject";
 import ProjectList from "../components/projects/ProjectList/ProjectList";
 import ProjectDetails from "../components/projects/ProjectDetails/ProjectDetails";
+import { PostDetails } from "../components/posts/PostDetails";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -32,7 +33,12 @@ const MainRoutes = () => {
       element: <PostEdit />,
     },
     {
-      id:4,
+      id: 5,
+      path: "/post-details/:id",
+      element: <PostDetails />,
+    },
+    {
+      id: 4,
       path: "/",
       element: <HomePage />,
     },
@@ -77,7 +83,6 @@ const MainRoutes = () => {
       path: "/projects-edit/:id",
       element: <EditProject />,
     },
-
   ];
   return (
     <Routes>

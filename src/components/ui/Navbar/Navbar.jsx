@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { checkUserLogin } from "../../../helpers/functions";
 import { NavLink } from "react-router-dom";
 
-const NavBar = () => {
+const Navbar = () => {
   const navigate = useNavigate();
   return (
     <div className="bg-black/75 w-full fixed top-0 py-5 z-[10000]">
@@ -47,4 +47,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default Navbar;
