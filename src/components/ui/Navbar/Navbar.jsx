@@ -20,7 +20,12 @@ const Navbar = () => {
               <NavLink to="posts">Posts</NavLink>
             </li>
             <li>
-              <NavLink>Chats</NavLink>
+              <a
+                href="https://guildhub-production.up.railway.app"
+                target="_blank"
+              >
+                Chats
+              </a>
             </li>
             <li>
               <NavLink>Education</NavLink>

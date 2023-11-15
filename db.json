@@ -133,6 +133,20 @@
       "about": "",
       "type": "user",
       "id": 3
+    },
+    {
+      "firstName": "Aman",
+      "lastName": "",
+      "image": "",
+      "email": "amantur.mendibaev2003@gmail.com",
+      "phone": "",
+      "skills": "",
+      "stack": "",
+      "education": "",
+      "position": "",
+      "about": "",
+      "type": "user",
+      "id": 4
     }
   ],
   "posts": [],
