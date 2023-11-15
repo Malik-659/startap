@@ -1,20 +1,61 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { checkUserLogin, logout } from "../../../helpers/functions";
+import { NavLink } from "react-router-dom";
 
-const NavBar = () => {
+const Navbar = () => {
+<<<<<<< HEAD:backup/Navbar.jsx
+=======
+  const navigate = useNavigate();
+>>>>>>> fa94118c1cb7ec01f237679ceb7582cae0a01cfe:src/components/ui/Navbar/Navbar.jsx
   return (
-    <div className="bg-black/75 w-full fixed top-0">
+    <div className="bg-black/75 w-full fixed top-0 py-5 z-[10000]">
       <div className="flex  justify-between px-5">
         <div className="w-1/2">
-          <ul className="flex text-white font-normal font-jomhuria text-[56px] gap-x-[52px]">
-            <li>Registration</li>
-            <li>Authorization</li>
-            <li>Posts</li>
-            <li>Chats</li>
-            <li>Education</li>
+          <ul className="flex text-white font-normal font-archivoblack text-3xl gap-x-[52px]">
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            {!checkUserLogin() ? (
+              <>
+                <li>
+                  <NavLink to="/sign-up">Registration</NavLink>
+                </li>
+                <li>
+                  <NavLink to="sign-in">Authorization</NavLink>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <NavLink
+                    onClick={() => {
+                      logout();
+                    }}
+                  >
+                    Logout
+                  </NavLink>
+                </li>
+              </>
+            )}
+            <li>
+              <NavLink to="posts">Posts</NavLink>
+            </li>
+            <li>
+              <a
+                href="https://guildhub-production.up.railway.app"
+                target="_blank"
+              >
+                Chats
+              </a>
+            </li>
+            <li>
+              <NavLink>Education</NavLink>
+            </li>
           </ul>
         </div>
-        <div className="font-normal text-white font-jomhuria text-[56px] flex items-center gap-2">
-          <p>User</p>
+        <div className="font-normal text-white font-jomhuria text-3xl flex items-center gap-2">
+          <p>{checkUserLogin() ? checkUserLogin() : "User"}</p>
           <svg
             width="45"
             height="45"
@@ -33,4 +74,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default Navbar;

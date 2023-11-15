@@ -1,8 +1,9 @@
 import { useEffect } from "react";
-import Navbar from "./components/ui/NavBar/Navbar";
+
 import MainRoutes from "./route/MainRoutes";
 import { useDispatch } from "react-redux";
 import { checkUpdate } from "./store/posts/postsAction";
+import NewNavbar from "./components/ui/NewNavbar/NewNavbar";
 
 function App() {
   const dispatch = useDispatch();
@@ -11,7 +12,8 @@ function App() {
   }, []);
   return (
     <div>
-      <Navbar />
+      <NewNavbar />
+
       <MainRoutes />
     </div>
   );

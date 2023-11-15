@@ -17,6 +17,7 @@ export const addUserToLocalStorage = (user, tokens, image) => {
 export const logout = () => {
   localStorage.removeItem("startUser");
   localStorage.removeItem("startTokens");
+  localStorage.removeItem("startImage");
 };
 
 export const checkUserLogin = () => {
