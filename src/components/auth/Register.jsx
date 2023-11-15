@@ -50,8 +50,8 @@ const Register = () => {
           ) : (
             <>
               {modal && <ActivateCode setModal={setModal} />}
-              <div className="flex items-center h-full w-[95%] mx-auto justify-around mt-5 flex-wrap">
-                <div className="flex flex-col bg-white bg-opacity-70 w-[37rem] rounded-lg items-center p-7 py-14 gap-3">
+              <div className="flex items-center h-full w-[95%] mx-auto justify-around mt-10 flex-wrap">
+                <div className="flex flex-col bg-white bg-opacity-70 w-[35rem] rounded-lg items-center p-7 py-14 gap-3">
                   <input
                     type="text"
                     id="FirstName"
@@ -146,10 +146,10 @@ const Register = () => {
                   </div>
                 </div>
                 <div className="text-center">
-                  <h1 className="font-jomhuria  text-[10rem] text-white">
+                  <h1 className="font-jomhuria  text-[7rem] text-white">
                     Register
                   </h1>
-                  <h2 className="font-jomhuria text-[7rem] text-white">
+                  <h2 className="font-jomhuria text-[5rem] text-white">
                     Start with training
                   </h2>
                 </div>

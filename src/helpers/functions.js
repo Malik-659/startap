@@ -21,7 +21,7 @@ export const logout = () => {
 
 export const checkUserLogin = () => {
   const user = JSON.parse(localStorage.getItem("startUser"));
-  if (user) return user;
+  if (user) return user.firstName;
   return false;
 };
 
