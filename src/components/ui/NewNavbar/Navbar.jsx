@@ -1,60 +1,57 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { checkUserLogin, logout } from "../../../helpers/functions";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { checkUserLogin, logout } from "../../../helpers/functions";
+import { useSelector } from "react-redux";
 
-const Navbar = () => {
-<<<<<<< HEAD:backup/Navbar.jsx
-=======
-  const navigate = useNavigate();
->>>>>>> fa94118c1cb7ec01f237679ceb7582cae0a01cfe:src/components/ui/Navbar/Navbar.jsx
+const NewNavbar = () => {
+  const [prikol, setPrikol] = useState(false);
+  const { oneUser } = useSelector((state) => state.users);
+
+  useEffect(() => {}, [oneUser, prikol]);
+
   return (
     <div className="bg-black/75 w-full fixed top-0 py-5 z-[10000]">
       <div className="flex  justify-between px-5">
         <div className="w-1/2">
-          <ul className="flex text-white font-normal font-archivoblack text-3xl gap-x-[52px]">
+          <ul className="flex text-white font-normal font-jomhuria text-[2rem] gap-x-[52px] ">
             <li>
               <NavLink to="/">Home</NavLink>
             </li>
-            {!checkUserLogin() ? (
+            {checkUserLogin() ? (
+              <li
+                onClick={() => {
+                  logout();
+                  setPrikol(true);
+                }}
+                className="cursor-pointer"
+              >
+                Logout
+              </li>
+            ) : (
               <>
                 <li>
                   <NavLink to="/sign-up">Registration</NavLink>
                 </li>
                 <li>
-                  <NavLink to="sign-in">Authorization</NavLink>
-                </li>
-              </>
-            ) : (
-              <>
-                <li>
-                  <NavLink
-                    onClick={() => {
-                      logout();
-                    }}
-                  >
-                    Logout
-                  </NavLink>
+                  <NavLink to="/sign-in">Authorization</NavLink>
                 </li>
               </>
             )}
+
             <li>
-              <NavLink to="posts">Posts</NavLink>
+              <NavLink to="/posts">Posts</NavLink>
             </li>
             <li>
-              <a
-                href="https://guildhub-production.up.railway.app"
-                target="_blank"
-              >
+              <NavLink to="https://guildhub-production.up.railway.app">
                 Chats
-              </a>
+              </NavLink>
             </li>
             <li>
-              <NavLink>Education</NavLink>
+              <NavLink to="">Education</NavLink>
             </li>
           </ul>
         </div>
-        <div className="font-normal text-white font-jomhuria text-3xl flex items-center gap-2">
+        <div className="font-normal text-white font-jomhuria text-[2rem] flex items-center gap-2">
           <p>{checkUserLogin() ? checkUserLogin() : "User"}</p>
           <svg
             width="45"
@@ -74,4 +71,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NewNavbar;

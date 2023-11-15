@@ -13,7 +13,11 @@ const postsSlice = createSlice({
     status: "",
     checkUp: null,
   },
-  reducers: {},
+  reducers: {
+    clearOnePost: (state) => {
+      state.onePost = null;
+    },
+  },
   extraReducers: (buider) => {
     buider
       .addCase(getPosts.pending, (state) => {
@@ -45,4 +49,5 @@ const postsSlice = createSlice({
   },
 });
 
+export const { clearOnePost } = postsSlice.actions;
 export default postsSlice.reducer;

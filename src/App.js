@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+
 import MainRoutes from "./route/MainRoutes";
 import { useDispatch } from "react-redux";
 import { checkUpdate } from "./store/posts/postsAction";
@@ -12,6 +13,7 @@ function App() {
   return (
     <div>
       <NewNavbar />
+
       <MainRoutes />
     </div>
   );

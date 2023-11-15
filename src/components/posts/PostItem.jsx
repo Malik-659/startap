@@ -21,13 +21,13 @@ export const PostItem = ({ post, activeButton }) => {
                 : ""
         }`}
         onClick={() => {
-          dispacth(getOnePost(post.id));
-          navigate(`/edit-post/${post.id}`);
+          // dispacth(getOnePost(post.id));
+          navigate(`/post-details/${post.id}`);
         }}
       >
         <div className="flex justify-between">
-          <h3 className="text-lg font-semibold line-clamp-2 w-4/5 h-14">
-            {post.description}
+          <h3 className="text-lg font-semibold line-clamp-2 w-4/5 h-14 ml-4 my-4">
+            {post.title}
           </h3>
           <h3 className="m-4 text-lg font-normal">{post.royal}</h3>
           {/* <div className="w-8 h-8" onClick={() => setLikes(!likes)}>
@@ -45,24 +45,21 @@ export const PostItem = ({ post, activeButton }) => {
           )}
         </div>
         <h3 className="m-4">{post.name}</h3>
-        <p className="">{post.description}</p>
-        <div className="py-6 w-full flex justify-around">
-          <button
-            className={`bg-blue-500 rounded-lg py-2 px-4 border border-black hover:bg-[#5345FAB2] hover:text-white hover:border-white ${
-              activeButton === 0 ? "bg-[#5345FAB2]" : ""
-            }`}
-          >
-            Edit
-          </button>
-          <button
-            className={`bg-blue-500 rounded-lg py-2 px-4 border border-black hover:bg-[#5345FAB2] hover:text-white hover:border-white ${
-              activeButton === 0 ? "bg-[#5345FAB2]" : ""
-            }`}
-            onClick={() => dispacth(deletePost(post.id))}
-          >
-            Delete
-          </button>
-        </div>
+        {post.sity && <h3 className="m-4">Город: {post.sity}</h3>}
+        {post.exp && <h3 className="m-4">Опыт: {post.exp}</h3>}
+        <p
+          className={`${
+            activeButton === 0
+              ? "bg-[#5b5a5a]"
+              : activeButton === 1
+                ? "bg-[#897efcb2]"
+                : activeButton === 2
+                  ? "bg-[#be84f5b2]"
+                  : ""
+          } rounded-lg p-4`}
+        >
+          {post.description}
+        </p>
       </div>
     </div>
   );
