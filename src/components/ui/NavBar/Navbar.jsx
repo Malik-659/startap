@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { checkUserLogin } from "../../../helpers/functions";
+import { checkUserLogin, logout } from "../../../helpers/functions";
 import { NavLink } from "react-router-dom";
 
-const NavBar = () => {
+const Navbar = () => {
   const navigate = useNavigate();
   return (
     <div className="bg-black/75 w-full fixed top-0 py-5 z-[10000]">
@@ -11,11 +11,30 @@ const NavBar = () => {
         <div className="w-1/2">
           <ul className="flex text-white font-normal font-archivoblack text-3xl gap-x-[52px]">
             <li>
-              <NavLink to="/sign-up">Registration</NavLink>
+              <NavLink to="/">Home</NavLink>
             </li>
-            <li>
-              <NavLink to="sign-in">Authorization</NavLink>
-            </li>
+            {!checkUserLogin() ? (
+              <>
+                <li>
+                  <NavLink to="/sign-up">Registration</NavLink>
+                </li>
+                <li>
+                  <NavLink to="sign-in">Authorization</NavLink>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <NavLink
+                    onClick={() => {
+                      logout();
+                    }}
+                  >
+                    Logout
+                  </NavLink>
+                </li>
+              </>
+            )}
             <li>
               <NavLink to="posts">Posts</NavLink>
             </li>
@@ -52,4 +71,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default Navbar;
