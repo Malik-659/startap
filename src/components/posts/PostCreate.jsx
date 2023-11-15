@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addPosts } from "../../store/posts/postsAction";
+import styles from "./postsStyles.module.css";
 
 export const PostCreate = () => {
   //! elem
@@ -118,26 +119,30 @@ export const PostCreate = () => {
       {!roundTwo && (
         <>
           {!post && (
-            <div className="mt-32 flex justify-center">
-              <div className="bg-blue-400 rounded-lg px-6">
-                <h3 className="text-2xl font-semibold my-4">Select category</h3>
-                <select
-                  className="w-32 mb-6"
-                  name=""
-                  id=""
-                  onChange={(e) => setPost(e.target.value)}
-                >
-                  <option hidden>Choose`</option>
-                  <option value="postsTeams">Teams</option>
-                  <option value="postWorks">Works</option>
-                  <option value="postVacancies">Vacancies</option>
-                </select>
+            <div className={`w-full h-screen ${styles.bg} pt-32`}>
+              <div className="flex justify-center">
+                <div className="bg-blue-400 rounded-lg px-6">
+                  <h3 className="text-2xl font-semibold my-4">
+                    Select category
+                  </h3>
+                  <select
+                    className="w-32 mb-6"
+                    name=""
+                    id=""
+                    onChange={(e) => setPost(e.target.value)}
+                  >
+                    <option hidden>Choose`</option>
+                    <option value="postsTeams">Teams</option>
+                    <option value="postWorks">Works</option>
+                    <option value="postVacancies">Vacancies</option>
+                  </select>
+                </div>
               </div>
             </div>
           )}
           {post === "postsTeams" && (
-            <>
-              <div className="w-1/2 m-auto rounded-lg mt-32 py-4 bg-[#303030B2] text-white">
+            <div className={`w-full h-screen ${styles.bg} pt-32`}>
+              <div className="w-1/2 m-auto rounded-lg py-4 bg-[#303030B2] text-white">
                 <h2 className="text-3xl font-bold flex justify-center my-4">
                   Edit Post
                 </h2>
@@ -201,11 +206,11 @@ export const PostCreate = () => {
                   </button>
                 </div>
               </div>
-            </>
+            </div>
           )}
           {post === "postWorks" && (
-            <>
-              <div className="w-1/2 m-auto rounded-lg mt-32 py-4 bg-[#5345FAB2]">
+            <div className={`w-full h-screen ${styles.bg} pt-32`}>
+              <div className="w-1/2 m-auto rounded-lg py-4 bg-[#5345FAB2]">
                 <h2 className="text-3xl font-bold flex justify-center my-4">
                   Edit Post
                 </h2>
@@ -263,11 +268,11 @@ export const PostCreate = () => {
                   </button>
                 </div>
               </div>
-            </>
+            </div>
           )}
           {post === "postVacancies" && (
-            <>
-              <div className="w-1/2 m-auto rounded-lg mt-32 py-4 bg-[#A253ECB2]">
+            <div className={`w-full h-screen ${styles.bg} pt-32`}>
+              <div className="w-1/2 m-auto rounded-lg py-4 bg-[#A253ECB2]">
                 <h2 className="text-3xl font-bold flex justify-center my-4">
                   Edit Post
                 </h2>
@@ -341,51 +346,55 @@ export const PostCreate = () => {
                   </button>
                 </div>
               </div>
-            </>
+            </div>
           )}
         </>
       )}
       {roundTwo && (
-        <div
-          className={`w-1/2 my-4 p-4 m-auto rounded-lg mt-32 ${
-            post === "postsTeams"
-              ? "bg-[#303030B2]"
-              : post === "postWorks"
-                ? "bg-[#5345FAB2]"
-                : post === "postVacancies"
-                  ? "bg-[#A253ECB2]"
-                  : ""
-          }`}
-        >
-          <div className="flex flex-col items-center">
-            <input
-              className={`my-2 w-3/5 rounded-md p-2`}
-              type="text"
-              placeholder="title"
-              onChange={(e) => setRequir({ ...requir, title: e.target.value })}
-            />
-            <input
-              className={`my-2 w-3/5 rounded-md p-2`}
-              type="text"
-              placeholder="description"
-              onChange={(e) =>
-                setRequir({ ...requir, description: e.target.value })
-              }
-            />
-            <button
-              className={`${
-                post === "postsTeams"
-                  ? "bg-[#5b5a5a]"
-                  : post === "postWorks"
-                    ? "bg-[#897efcb2]"
-                    : post === "postVacancies"
-                      ? "bg-[#be84f5b2]"
-                      : ""
-              } rounded-lg py-2 px-6`}
-              onClick={() => createPosts(post, requir)}
-            >
-              Add post
-            </button>
+        <div className={`w-full h-screen ${styles.bg} pt-32`}>
+          <div
+            className={`w-1/2 my-4 p-4 m-auto rounded-lg ${
+              post === "postsTeams"
+                ? "bg-[#303030B2]"
+                : post === "postWorks"
+                  ? "bg-[#5345FAB2]"
+                  : post === "postVacancies"
+                    ? "bg-[#A253ECB2]"
+                    : ""
+            }`}
+          >
+            <div className="flex flex-col items-center">
+              <input
+                className={`my-2 w-3/5 rounded-md p-2`}
+                type="text"
+                placeholder="title"
+                onChange={(e) =>
+                  setRequir({ ...requir, title: e.target.value })
+                }
+              />
+              <input
+                className={`my-2 w-3/5 rounded-md p-2`}
+                type="text"
+                placeholder="description"
+                onChange={(e) =>
+                  setRequir({ ...requir, description: e.target.value })
+                }
+              />
+              <button
+                className={`${
+                  post === "postsTeams"
+                    ? "bg-[#5b5a5a]"
+                    : post === "postWorks"
+                      ? "bg-[#897efcb2]"
+                      : post === "postVacancies"
+                        ? "bg-[#be84f5b2]"
+                        : ""
+                } rounded-lg py-2 px-6`}
+                onClick={() => createPosts(post, requir)}
+              >
+                Add post
+              </button>
+            </div>
           </div>
         </div>
       )}

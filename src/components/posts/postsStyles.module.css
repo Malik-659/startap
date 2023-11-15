@@ -1,3 +1,5 @@
-body {
+.bg {
   background: url("https://abrakadabra.fun/uploads/posts/2022-01/1642383049_3-abrakadabra-fun-p-fioletovie-molnii-na-chernom-fone-7.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }

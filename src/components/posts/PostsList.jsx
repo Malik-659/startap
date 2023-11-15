@@ -20,8 +20,8 @@ export const PostsList = () => {
     dispatch(getPosts(1));
   }, []);
   return (
-    <>
-      <div className={`w-full flex justify-center mt-32 ${styles.bg}`}>
+    <div className={`w-full ${styles.bg}`}>
+      <div className={`w-full flex justify-center pt-32`}>
         <button
           className={`bg-blue-500/75 rounded-lg m-4 p-2 border border-black hover:bg-[#303030B2] hover:text-white hover:border-white ${
             activeButton === 0 ? "bg-[#303030B2]" : ""
@@ -69,6 +69,6 @@ export const PostsList = () => {
           <PostItem key={post.is} post={post} activeButton={activeButton} />
         ))}
       </div>
-    </>
+    </div>
   );
 };
