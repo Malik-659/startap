@@ -124,10 +124,15 @@ const Register = () => {
                         onChange={(e) => {
                           setType(e.target.value);
                         }}
+                        className="bg-violet-500 text-white p-1 cursor-pointer rounded-md "
                       >
                         <option hidden>type</option>
-                        <option value="user">user</option>
-                        <option value="company">company</option>
+                        <option value="user" className="hover:bg-violet-900">
+                          user
+                        </option>
+                        <option value="company" className="hover:bg-violet-900">
+                          company
+                        </option>
                       </select>
                     </div>
                     <button

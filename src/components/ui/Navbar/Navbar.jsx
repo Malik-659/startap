@@ -6,18 +6,18 @@ import { NavLink } from "react-router-dom";
 const NavBar = () => {
   const navigate = useNavigate();
   return (
-    <div className="bg-black/75 w-full fixed top-0 py-5 ">
+    <div className="bg-black/75 w-full fixed top-0 py-5 z-[10000]">
       <div className="flex  justify-between px-5">
         <div className="w-1/2">
           <ul className="flex text-white font-normal font-archivoblack text-3xl gap-x-[52px]">
             <li>
-              <NavLink>Registration</NavLink>
+              <NavLink to="/sign-up">Registration</NavLink>
             </li>
             <li>
-              <NavLink>Authorization</NavLink>
+              <NavLink to="sign-in">Authorization</NavLink>
             </li>
             <li>
-              <NavLink>Posts</NavLink>
+              <NavLink to="posts">Posts</NavLink>
             </li>
             <li>
               <NavLink>Chats</NavLink>
@@ -27,8 +27,7 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-        <div  onClick={() => navigate("/users/:id")} className="font-normal text-white font-jomhuria text-3xl flex items-center gap-2">
-
+        <div className="font-normal text-white font-jomhuria text-3xl flex items-center gap-2">
           <p>{checkUserLogin() ? checkUserLogin() : "User"}</p>
           <svg
             width="45"
